@@ -1,0 +1,28 @@
+{
+  "artifact_mode": "external-symlinks",
+  "links": 75,
+  "copied_artifact_bytes": 0,
+  "deleted_previous_copy_logical_bytes": 262420111831,
+  "sda2_cache_reclaimed_bytes": 5489942528,
+  "learning_tests": "10 passed",
+  "rq1_linked_replay": "6 best/last checkpoints passed; metrics unchanged",
+  "model_prototype_hashes": "8 passed",
+  "data_release": "not GitHub; Hugging Face planned",
+  "outputs": "workspace/reproduced/rq1_linked_replay",
+  "doctor": {
+    "root": "/mnt/nvme1/user/language-grounded-ft",
+    "failures": [],
+    "hardware_executed": false,
+    "declared_ros_system_links": 19,
+    "declared_artifact_links": 77,
+    "artifact_mode": "external-symlinks"
+  },
+  "scope_changes": {
+    "learning_overlay_files_removed": 31,
+    "genesis_overlay_files_removed": 40,
+    "robot_packages_removed": [
+      "vla_adapter"
+    ],
+    "upstream_submodules": "unchanged"
+  }
+}

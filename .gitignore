@@ -1,0 +1,21 @@
+/workspace/
+/artifacts/
+/.venvs/
+/.runtime/
+/.cache/
+/build/
+/install/
+/log/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+*.key
+
+# Local artifact maps and private configuration
+/.local/
+.env.*
+*.pem
+
+# Local manuscript figure archive
+/publication/fig

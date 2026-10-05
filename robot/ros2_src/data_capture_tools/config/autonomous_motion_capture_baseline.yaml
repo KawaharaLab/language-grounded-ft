@@ -1,0 +1,16 @@
+data_capture_manager:
+  ros__parameters:
+    config: robot/ros2_src/data_capture_tools/config/data_capture.yaml
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 180.0
+    rosbag_sigterm_timeout_sec: 60.0
+    rosbag_sigkill_on_timeout: false
+
+    release_mode: force_spike
+    # force_spike_threshold: 3.4
+    force_spike_threshold: 0.4
+    force_offset_sample_count: 20
+    force_offset_sample_period_sec: 0.01
+    closed_wait_sec: 5.0
+    record_enter_events: true
+    post_open_wait_sec: 5.0

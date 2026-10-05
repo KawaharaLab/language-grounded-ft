@@ -1,0 +1,67 @@
+data_capture_manager:
+  ros__parameters:
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 60.0
+    rosbag_sigterm_timeout_sec: 10.0
+    rosbag_sigkill_on_timeout: false
+
+    # Placing initial pose measured with gamepad teleoperation on 2026-08-27.
+    # Values are ordered to match home_joint_names, not /joint_states order.
+    home_joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    home_positions_rad:
+      - 0.7755430340766907
+      - -1.5805090109454554
+      - 1.580528736114502
+      - -1.580163304005758
+      - -1.5806320349322718
+      - -0.009931389485494435
+
+    joint_state_topic: /joint_states
+    robot_program_running_topic: /io_and_status_controller/robot_program_running
+    joint_command_topic: /servo_node/delta_joint_cmds
+    twist_command_topic: /servo_node/delta_twist_cmds
+    servo_start_service: /servo_node/start_servo
+    command_frame: base_link
+    startup_timeout_sec: 30.0
+    home_timeout_sec: 30.0
+    home_deadband: 0.002
+    home_settle_duration_sec: 0.4
+    home_velocity_tolerance_rad_sec: 0.003
+    home_min_joint_speed: 0.02
+    home_max_joint_speed: 1.0
+    home_velocity_gain: 1.5
+
+    gripper_action_name: /robotiq_2f_gripper_action
+    gripper_goal_log_topic: /robotiq_2f_gripper_action_goal
+    gripper_open_position: 0.140
+    gripper_close_position: 0.002
+    gripper_target_speed: 0.1
+    gripper_target_force: 0.1
+    gripper_result_timeout_sec: 25.0
+
+    control_period_sec: 0.01
+    lower_twist_command_z: -0.5
+    return_twist_command_z: 1.0
+    enter_extra_lower_sec: 0.5
+    success_reason: enter_then_half_second_descent_then_gripper_open
+    max_lower_duration_sec: 8.0
+    post_start_recording_delay_sec: 0.5
+
+    left_ft_topic: /force_torque/left
+    right_ft_topic: /force_torque/right
+    camera_wrist_topic: /camera_wrist/realsense2_camera/color/image_raw
+    camera_fixed_topic: /camera_fixed/realsense2_camera/color/image_raw
+    require_force_sensors: true
+    require_cameras: true
+    key_event_topic: /data_capture/key_events
+    event_force_wait_sec: 0.03
+
+    relay_servo_commands: true
+    servo_output_topic: /forward_position_controller/commands_teleop
+    robot_command_topic: /forward_position_controller/commands

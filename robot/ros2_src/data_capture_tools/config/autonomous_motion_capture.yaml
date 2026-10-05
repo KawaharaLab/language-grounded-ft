@@ -1,0 +1,78 @@
+data_capture_manager:
+  ros__parameters:
+    config: robot/ros2_src/data_capture_tools/config/data_capture.yaml
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 180.0
+    rosbag_sigterm_timeout_sec: 60.0
+    rosbag_sigkill_on_timeout: false
+
+    joint_state_topic: /joint_states
+    joint_command_topic: /servo_node/delta_joint_cmds
+    twist_command_topic: /servo_node/delta_twist_cmds
+    servo_start_service: /servo_node/start_servo
+    command_frame: base_link
+
+    home_joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    home_positions_rad:
+      - 0.7853981633974483
+      - -1.5707963267948966
+      - 1.5707963267948966
+      - -1.5707963267948966
+      - -1.5707963267948966
+      - 0.0
+
+    home_timeout_sec: 20.0
+    home_deadband: 0.01
+    home_min_joint_speed: 0.5
+    home_max_joint_speed: 8.0
+    home_velocity_gain: 2.0
+
+    gripper_action_name: /robotiq_2f_gripper_action
+    gripper_goal_log_topic: /robotiq_2f_gripper_action_goal
+    gripper_close_position: 0.002
+    gripper_open_position: 0.140
+    gripper_target_speed: 0.01
+    gripper_target_force: 0.1
+    gripper_result_timeout_sec: 5.0
+
+    pre_motion_recording_delay_sec: 1.0
+    closed_wait_sec: 5.0
+    lower_distance_m: 0.05
+    safety_extra_lower_m: 0.04
+    open_on_safety_limit: true
+    lower_velocity_scale_mps: 0.03
+    lower_twist_command_z: -1.0
+    post_open_wait_sec: 5.0
+    release_mode: patchtst
+
+    left_ft_topic: /force_torque/left
+    right_ft_topic: /force_torque/right
+    force_sample_period_sec: 0.01
+    force_wait_timeout_sec: 5.0
+    force_offset_sample_count: 20
+    force_offset_sample_period_sec: 0.01
+    force_spike_threshold: 3.0
+
+    record_enter_events: true
+
+    patchtst_enabled: true
+    patchtst_root: PatchTST/PatchTST_self_supervised
+    patchtst_model_path: artifacts/robot/twilight-music-38_epoch4000.pth
+    patchtst_text_emb_dir: artifacts/robot/text_emb
+    patchtst_device: auto
+    patchtst_seq_len: 80
+    patchtst_min_samples: 40
+    patchtst_eval_period_sec: 0.1
+    patchtst_place_margin: 0.0
+
+    vision_image_topic: /camera_wrist/realsense2_camera/color/image_raw
+    vision_eval_period_sec: 0.1
+    vision_jpeg_quality: 75
+    openai_model: gpt-4o
+    openai_api_key: ""

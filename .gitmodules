@@ -1,0 +1,9 @@
+[submodule "third_party/genesis"]
+	path = third_party/genesis
+	url = https://github.com/Genesis-Embodied-AI/Genesis.git
+[submodule "third_party/patchtst"]
+	path = third_party/patchtst
+	url = https://github.com/yuqinie98/PatchTST.git
+[submodule "third_party/robotiq"]
+	path = third_party/robotiq
+	url = https://github.com/jannishaberhausen/robotiq_2f_gripper_ros2.git

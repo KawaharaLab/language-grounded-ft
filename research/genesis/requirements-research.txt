@@ -1,0 +1,16 @@
+# Research-side dependencies beyond the pinned Genesis installation.
+imageio>=2.34
+matplotlib>=3.8
+numpy>=1.26
+opencv-python-headless>=4.10
+pandas>=2.2
+pillow>=10.0
+scikit-learn>=1.5
+scipy>=1.14
+sentence-transformers>=5.1
+torch>=2.4
+tqdm>=4.66
+trimesh>=4.4
+
+# The retained RQ2 real-log audit/figure loaders also require the ROS 2 Python
+# packages geometry_msgs, rclpy, and sensor_msgs from the host ROS installation.

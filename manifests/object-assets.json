@@ -1,0 +1,17 @@
+{
+  "gso": {
+    "upstream": "https://github.com/kevinzakka/mujoco_scanned_objects.git",
+    "local_source_commit": "6ff8d275cebfd5b47e49685e3cfbe64b20e49a3c",
+    "path": "artifacts/Genesis/data/objects/gso",
+    "obj_png_license": "CC-BY-4.0",
+    "mjcf_xml_license": "MIT",
+    "attribution": "Google Scanned Objects; MuJoCo conversion by Kevin Zakka",
+    "redistributed_in_git": false
+  },
+  "ycb": {
+    "upstream": "https://www.ycbbenchmarks.com/object-models/",
+    "path": "artifacts/Genesis/data/objects/ycb",
+    "local_processing_provenance": "not fully recorded; verify before public mesh redistribution",
+    "redistributed_in_git": false
+  }
+}

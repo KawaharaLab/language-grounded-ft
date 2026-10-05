@@ -1,0 +1,15 @@
+Robotiq 2F-140 visualization assets
+===================================
+
+This directory contains material copied or adapted from the
+`robotiq_2f_gripper_description` package in:
+
+  https://github.com/jannishaberhausen/robotiq_2f_gripper_ros2.git
+  commit 17533fe6faa9688f40a7ccc1663f59054c6dc3e2
+
+The twelve STL mesh files are byte-identical to that pinned package. The Xacro
+files are copied, adapted, or derived versions used by `teleop_servo`, including
+package-path changes and local joint-model behavior. They remain covered by the
+ROS-Industrial BSD license reproduced in `LICENCE` in this directory. Local
+modifications are identified in the Xacro file headers and do not replace the
+upstream notice.

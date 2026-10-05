@@ -1,0 +1,99 @@
+data_capture_manager:
+  ros__parameters:
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 60.0
+    rosbag_sigterm_timeout_sec: 10.0
+    rosbag_sigkill_on_timeout: false
+
+    # Exactly the same 30 mm-raised pose as both wobble evaluation profiles.
+    home_joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    home_positions_rad:
+      - 0.7716773748397827
+      - -1.584988419940571
+      - 1.603399812373506
+      - -1.608940007738151
+      - -1.5834692160235804
+      - -0.01414662996401006
+
+    joint_state_topic: /joint_states
+    robot_program_running_topic: /io_and_status_controller/robot_program_running
+    joint_command_topic: /servo_node/delta_joint_cmds
+    twist_command_topic: /servo_node/delta_twist_cmds
+    servo_start_service: /servo_node/start_servo
+    command_frame: base_link
+    startup_timeout_sec: 30.0
+    home_timeout_sec: 30.0
+    home_deadband: 0.02
+    home_settle_duration_sec: 0.1
+    home_velocity_tolerance_rad_sec: 0.02
+    home_min_joint_speed: 0.02
+    home_max_joint_speed: 1.0
+    home_velocity_gain: 1.5
+
+    gripper_action_name: /robotiq_2f_gripper_action
+    gripper_goal_log_topic: /robotiq_2f_gripper_action_goal
+    gripper_open_position: 0.140
+    gripper_close_position: 0.002
+    gripper_target_speed: 0.1
+    gripper_target_force: 0.1
+    gripper_result_timeout_sec: 25.0
+
+    control_period_sec: 0.01
+    lower_twist_command_z: -0.5
+    return_twist_command_z: 1.0
+    post_grasp_hold_sec: 1.0
+    pick_lift_duration_sec: 4.0
+    post_lift_hold_sec: 0.8
+    enter_extra_lower_sec: 0.5
+    enter_event_alias: floor_contact
+    success_reason: fz_baseline_detected_after_floor_contact
+    # Contact normally occurs around 8 s after descent starts.  Keep this above
+    # the 5 s post-contact observation window so the global limit cannot censor it.
+    max_lower_duration_sec: 13.5
+    post_start_recording_delay_sec: 4.0
+
+    left_ft_topic: /force_torque/left
+    right_ft_topic: /force_torque/right
+    camera_wrist_topic: /camera_wrist/realsense2_camera/color/image_raw
+    camera_fixed_topic: /camera_fixed/realsense2_camera/color/image_raw
+    require_force_sensors: true
+    require_cameras: true
+    key_event_topic: /data_capture/key_events
+    event_force_wait_sec: 0.03
+
+    relay_servo_commands: true
+    servo_output_topic: /forward_position_controller/commands_teleop
+    robot_command_topic: /forward_position_controller/commands
+
+    fz_baseline_calibration_sec: 1.0
+    fz_baseline_min_calibration_samples: 50
+    fz_baseline_run_suffix: fz_baseline_long_horizon
+    fz_baseline_threshold_n: 0.0
+    fz_baseline_stride_samples: 5
+    fz_baseline_required_consecutive: 3
+    fz_baseline_release_min_descent_sec: 2.0
+    # Deliberately continue lowering when zero crossing is not detected, to show
+    # whether corrected Fz ever crosses 0 N on the wobbling support.
+    fz_baseline_max_wait_after_contact_sec: 5.0
+    enter_reaction_compensation_sec: 0.3
+    force_pair_max_skew_ms: 15.0
+    fz_baseline_score_topic: /data_capture/fz_baseline_scores
+    fz_baseline_coordinate_sign:
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0

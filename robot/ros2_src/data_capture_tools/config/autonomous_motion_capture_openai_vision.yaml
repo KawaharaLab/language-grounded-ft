@@ -1,0 +1,17 @@
+data_capture_manager:
+  ros__parameters:
+    config: robot/ros2_src/data_capture_tools/config/data_capture.yaml
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 180.0
+    rosbag_sigterm_timeout_sec: 60.0
+    rosbag_sigkill_on_timeout: false
+
+    release_mode: openai_vision
+    vision_image_topic: /camera_fixed/realsense2_camera/color/image_raw
+    vision_eval_period_sec: 0.1
+    vision_jpeg_quality: 75
+    openai_model: gpt-4o
+    openai_api_key: ""
+    closed_wait_sec: 5.0
+    record_enter_events: true
+    post_open_wait_sec: 5.0

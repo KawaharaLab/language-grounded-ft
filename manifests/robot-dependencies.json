@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "ros_distribution": "humble",
+  "research_packages": [
+    "data_capture_tools", "mms101_driver", "gripper_client",
+    "realsense_dual_launch", "teleop_servo"
+  ],
+  "ros_dependencies": [
+    "ur_robot_driver", "ur_client_library", "moveit_servo",
+    "realsense2_camera", "cv_bridge", "rosbag2_py",
+    "control_msgs", "geometry_msgs", "sensor_msgs", "trajectory_msgs"
+  ],
+  "third_party": {
+    "robotiq_2f_gripper_ros2": {
+      "url": "https://github.com/jannishaberhausen/robotiq_2f_gripper_ros2.git",
+      "commit": "17533fe6faa9688f40a7ccc1663f59054c6dc3e2",
+      "destination": "workspace/ur3_robotiq_ros2/external/robotiq_2f_gripper_ros2",
+      "optional_local_overlay": ".local/robot-overlays/robotiq_2f_gripper_ros2",
+      "overlay_status": "Not distributed. If present locally, workspace materialization applies the two experiment-specific node files and reports that action.",
+      "nested_submodule": {
+        "path": "serial-ros2",
+        "url": "https://github.com/jannishaberhausen/serial-ros2",
+        "commit": "3fd8bd0fcb6cfd2bd6d5268fc3b33859e4182f6a"
+      }
+    }
+  },
+  "license_status": {
+    "research_checkout": "Original research contributions are authorized under Apache-2.0. data_capture_tools, mms101_driver, gripper_client, realsense_dual_launch, and teleop_servo include Apache-2.0 declarations and full package texts. Vendored Robotiq visualization meshes/Xacro under teleop_servo retain their ROS-Industrial BSD LICENCE and attribution and are excluded from the blanket Apache statement.",
+    "robotiq_description": "BSD notice in robotiq_2f_gripper_description/LICENCE (ROS-Industrial, 2013).",
+    "robotiq_interfaces": "BSD-3-Clause text in robotiq_2f_gripper_interfaces/LICENSE (PickNik Robotics, 2022).",
+    "robotiq_hardware_and_msgs": "package.xml license fields are TODO and no package-specific license text is present.",
+    "serial_ros2": "package.xml declares MIT. Complete MIT notices are embedded in include/serial/serial.h and include/serial/impl/{unix,win}.h at commit 3fd8bd0fcb6cfd2bd6d5268fc3b33859e4182f6a; include/serial/v8stdint.h carries a separate V8-project BSD-style notice. No standalone LICENSE/COPYING file is present."
+  }
+}

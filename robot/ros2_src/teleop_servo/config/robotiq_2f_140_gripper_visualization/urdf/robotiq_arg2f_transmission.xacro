@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Copied from ROS-Industrial Robotiq description material. See ../NOTICE
+     and ../LICENCE; only local formatting differs at the pinned comparison. -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="robotiq_arg2f_transmission" params="prefix">
+    <transmission name="${prefix}finger_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}finger_joint">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}finger_joint_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+</robot>

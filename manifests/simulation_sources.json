@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "component": "genesis-simulation-and-annotation",
+  "upstream": {
+    "repository": "https://github.com/Genesis-Embodied-AI/Genesis.git",
+    "commit": "8b1dba2fc99d0eff9ab7cc4b4bbc87685688fa44",
+    "license": "Apache-2.0"
+  },
+  "research_source": {
+    "fork_commit": "e8f52067b4773935677a5742a2873096ec3df135",
+    "branch": "sync-main-contact-torque",
+    "captured_at": "2026-09-30T09:54:08+09:00",
+    "dirty_status_sha256": "beda0ad93f6cc31a596b66d7a977d376e89cae32b4c937a8a7ee0df744481255",
+    "key_source_sha256": {
+      "src/generation/run_genesis_sim.py": "06e1faec755e7a80f01024b6174bceb0215b046a3bea60f5aedb10a6d0225a76",
+      "src/processing/rigid/1_create_annotations.py": "3e2cb1f5c589aee0b86508ca82ede2a734b89e15db544c2a459d307b5311c4ca",
+      "src/processing/rigid/2_create_train_csv.py": "e1d1779def7727d3c953742192c22ed7db5b56ed0e5e4fe953ca5a8b585e4fad"
+    },
+    "includes_relevant_dirty_worktree": true
+  },
+  "overlay": {
+    "path": "research/genesis",
+    "apply_to": "workspace/Genesis",
+    "scope": "paper-publication-dependency-closure",
+    "includes": [
+      "genesis/engine/entities/rigid_entity/rigid_entity.py",
+      "genesis/engine/solvers/rigid/constraint/solver.py",
+      "genesis/utils/array_class.py",
+      "src/generation/**",
+      "src/processing/rigid/1_create_annotations.py",
+      "src/processing/rigid/2_create_train_csv.py",
+      "src/processing/rigid/3_bert_eval.py",
+      "src/processing/rigid/3_bert_train.py",
+      "src/processing/rigid/create_independent_eval_sets.py",
+      "src/processing/rigid/create_support_contrast_sets.py",
+      "src/processing/rigid/create_train_balanced_set.py",
+      "src/processing/rigid/force_window_filter.py",
+      "src/evaluation/audit_real_object_contact_windows.py",
+      "src/evaluation/evaluate_terrain_force_baseline_offline.py",
+      "src/evaluation/evaluate_wobble_lift_and_lower.py",
+      "src/evaluation/export_semantic_ft_editing_bundle.py",
+      "src/evaluation/generate_pick_place_force_videos.py",
+      "src/evaluation/generate_real_model_surface_ft_examples.py",
+      "src/evaluation/generate_real_surface_ft_examples.py",
+      "src/evaluation/generate_semantic_ft_examples.py",
+      "src/evaluation/lift_and_lower_baseline.py",
+      "src/evaluation/lift_and_lower_object.py",
+      "src/evaluation/reexport_terminal_insertion_fonts.py",
+      "src/evaluation/replot_semantic_ft_bundle.py",
+      "src/evaluation/replot_terminal_insertion_errorbars.py",
+      "src/evaluation/replot_terminal_insertion_without_supervised.py",
+      "src/experiments/audit_rq1_surface_supervised.py",
+      "src/experiments/rq1_language_composition/**",
+      "src/workspace_paths.py",
+      "tests/rigid/test_contact_torque.py",
+      "tests/test_generation_make_step_contacts.py",
+      "tests/test_processing_rigid_annotations.py"
+    ],
+    "excludes": [
+      "__pycache__",
+      "*.pyc",
+      "data/**",
+      "fig/**",
+      "video/**",
+      "profile_out/**",
+      "projects/**",
+      "src/vla/**",
+      "genesis/ext/openpi",
+      "genesis/engine/couplers/sap_coupler.py",
+      "tests/deformable/**",
+      "src/evaluation/*benchmark*",
+      "src/evaluation/*openai_vision*",
+      "src/experiments/rq1_action_interaction/**",
+      "src/experiments/rq1_semantic_geometry/**"
+    ],
+    "integrity": {
+      "algorithm": "sha256-of-sorted-path-sha256-lines",
+      "line_format": "{path}\\t{sha256}\\n",
+      "digest": "1c9f4b33155b2034c37846b23a761fb245d94505806eec14132ead1f309d4fc3",
+      "file_count": 53,
+      "bytes": 1429514
+    }
+  },
+  "validation_evidence": "workspace/reproduced/simulation_smoke",
+  "external_artifacts": {
+    "genesis_objects": [
+      "Genesis/data/objects/gso/<object>/model.obj",
+      "Genesis/data/objects/ycb/<object>/model.obj"
+    ],
+    "named_ycb_defaults": [
+      "009_gelatin_box",
+      "010_potted_meat_can"
+    ],
+    "patchtst": [
+      "PatchTST/saved_models/**",
+      "PatchTST/results/**"
+    ],
+    "robot": [
+      "ur3_robotiq_ros2/data/**",
+      "ur3_robotiq_ros2/artifacts/**"
+    ],
+    "publication_media": [
+      "Genesis/fig/semantic_ft_examples/**",
+      "Genesis/fig/pick_place_force_videos/**",
+      "Genesis/video/paper_demo_20260919/**"
+    ],
+    "text_model": {
+      "model_id": "sentence-transformers/all-mpnet-base-v2",
+      "historical_revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "verified_date": "2026-09-30",
+  "workspace_root": "/mnt/nvme1/user/language-grounded-ft/workspace",
+  "command_executed": "tools/run.py learning -- /mnt/nvme1/user/language-grounded-ft/env/learning-replay-rq1.py --workspace /mnt/nvme1/user/language-grounded-ft/workspace --out /mnt/nvme1/user/language-grounded-ft/workspace/reproduced/rq1_guarded_replay",
+  "portable_command": ".venvs/learning/bin/python env/learning-replay-rq1.py --workspace workspace",
+  "environment": {
+    "python": "3.10.0",
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "scikit_learn": "1.7.1",
+    "torch": "2.8.0+cu128",
+    "inference_device": "cpu",
+    "full_lock_sha256": "6366a2d9994e6e07e64d51cbc37523afc75780f4be4d8abfd031633bb852f9c7"
+  },
+  "input_roots": [
+    "workspace/Genesis/src/experiments/audit_rq1_surface_supervised.py",
+    "workspace/Genesis/data",
+    "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337"
+  ],
+  "path_audit": {
+    "all_filesystem_inputs_under_new_repository": true,
+    "runtime_guard": "FT_ENFORCE_PORTABLE_PATHS=1; complete replay passed",
+    "original_repository_read_during_replay": false,
+    "recorded_absolute_paths_translated_before_open": true,
+    "json_path_values_and_dictionary_keys_translated": true,
+    "experiment_archive_self_contained": false,
+    "external_inputs": "source training CSVs and official evaluation CSVs resolve through workspace/Genesis/data and are hash checked"
+  },
+  "checkpoints": [
+    {"seed": 42, "selection": "best", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed42/best.pt", "sha256": "cb5210e3f9817871d1c9e75250553431dbae8b9cf69cfc1035fd55d011237b63"},
+    {"seed": 42, "selection": "last", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed42/last.pt", "sha256": "d5a4e23dd79e7fc63c9075c1ac4d23955e9d5b9707e230470f3f9bd3ff78142d"},
+    {"seed": 43, "selection": "best", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed43/best.pt", "sha256": "b77d0e7017ea18f85e10ef90478367bbebde3fc2a6012bbb67f57f9f62f05303"},
+    {"seed": 43, "selection": "last", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed43/last.pt", "sha256": "50140d00295c18a214348ced687824734d298bd8b53f0458193285e42c829041"},
+    {"seed": 44, "selection": "best", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed44/best.pt", "sha256": "77c96aa53985e8e1c7cd199c2de1cfe896fb79d21b80cfb4aec49d98668316f3"},
+    {"seed": 44, "selection": "last", "path": "workspace/artifacts/PatchTST/results/rq1_language_composition/rq1_20260916_235337/jobs/supervised_full_seed44/last.pt", "sha256": "1376287a8342db9ccb91c0e11230f186b986ce7f3add6b4d954d3162e646e36b"}
+  ],
+  "replay": {
+    "checkpoint_runs": 6,
+    "fixed_windows": {"action": 10008, "weight": 6000, "interaction": 3675},
+    "best_macro_f1_mean": {"action": 0.893059, "weight": 0.911216, "interaction": 0.753444},
+    "maximum_absolute_metric_error": 1.1102230246251565e-16,
+    "metric_error_comparison": "recomputed per-seed accuracy and Macro F1 versus each archived canonical metrics JSON"
+  },
+  "additional_smoke": {
+    "tiny_token_fusion_backward_and_optimizer_step": "passed",
+    "actual_0814_recorded_csv_and_text_embedding_batch": "passed under FT_ENFORCE_PORTABLE_PATHS",
+    "original_tree_access_during_dataset_test": "denied by runtime guard and test mocks",
+    "lora_checkpoint": "workspace/artifacts/PatchTST/results/terminal_insertion_supervised/terminal_insertion_supervised_20260913_172852/pretrained_adaptation/supervised/lora/seed_42/n_001/best.pth",
+    "lora_checkpoint_sha256": "0c12d805ec1af9738ba9966881e7170687f0c32014abf75147a2d7667664c6a8",
+    "strict_state_dict_load": "passed",
+    "cpu_inference_finite": true,
+    "primary_contrastive_lora_checkpoint": "workspace/artifacts/PatchTST/results/terminal_insertion_adaptation_efficiency/terminal_insertion_adaptation_efficiency_enter_minus030s_20260827_150802/lora_r4/seed_42/n_005/best.pth",
+    "primary_contrastive_lora_sha256": "9256b551030712660d682423001b8a5eb65fb44a8867c9a84122f2aa3721cbab",
+    "primary_contrastive_lora_strict_load_and_cpu_inference": "passed",
+    "credential_scan": "text patterns plus Python AST plus equality scan against original credential: zero overlay occurrences"
+  }
+}

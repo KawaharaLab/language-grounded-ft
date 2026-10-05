@@ -1,0 +1,10 @@
+{
+  "mode": "external-symlinks",
+  "scope": "Paper RQ1/RQ2/RQ3 and supplementary media",
+  "configuration": "manifests/local-links.example.json",
+  "local_mount_record": "artifacts/local-links.json",
+  "artifact_files_tracked_by_git": false,
+  "future_distribution": "Hugging Face",
+  "previous_independent_copy_logical_bytes": 262420111831,
+  "independent_copies_retained": false
+}

@@ -1,0 +1,26 @@
+# Minimal CPU replay environment observed in /home/user/PatchTST/.venv.
+# Python itself is pinned by learning-python.txt.
+numpy==1.26.4
+pandas==2.3.2
+scikit-learn==1.7.1
+torch==2.8.0
+
+# Exact transitive versions observed in the source uv.lock. Listing these
+# prevents a later resolver run from silently selecting newer compatible builds.
+filelock==3.19.1
+fsspec==2025.9.0
+jinja2==3.1.6
+joblib==1.5.2
+markupsafe==3.0.2
+mpmath==1.3.0
+networkx==3.4.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+scipy==1.15.3
+setuptools==80.9.0
+six==1.17.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+triton==3.4.0; platform_machine == "x86_64" and sys_platform == "linux"
+typing-extensions==4.15.0
+tzdata==2025.2

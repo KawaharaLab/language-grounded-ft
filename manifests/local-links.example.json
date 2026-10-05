@@ -1,0 +1,305 @@
+{
+  "scope": "Paper RQ1/RQ2/RQ3 and supplementary media; no artifact files in Git; future distribution via Hugging Face",
+  "links": [
+    {
+      "source": "/path/to/local/Genesis/data/train_08142026",
+      "destination": "artifacts/Genesis/data/train_08142026"
+    },
+    {
+      "source": "/path/to/local/Genesis/data/eval_08142026",
+      "destination": "artifacts/Genesis/data/eval_08142026"
+    },
+    {
+      "source": "/path/to/local/Genesis/data/objects/ycb",
+      "destination": "artifacts/Genesis/data/objects/ycb"
+    },
+    {
+      "source": "/path/to/local/Genesis/data/objects/gso",
+      "destination": "artifacts/Genesis/data/objects/gso"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/paper_classification_multiseed",
+      "destination": "artifacts/PatchTST/results/paper_classification_multiseed"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/paper_supervised_baselines",
+      "destination": "artifacts/PatchTST/results/paper_supervised_baselines"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/rq1_action_interaction",
+      "destination": "artifacts/PatchTST/results/rq1_action_interaction"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/rq1_language_composition",
+      "destination": "artifacts/PatchTST/results/rq1_language_composition"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/rq1_semantic_geometry",
+      "destination": "artifacts/PatchTST/results/rq1_semantic_geometry"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terminal_insertion",
+      "destination": "artifacts/PatchTST/results/terminal_insertion"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_adaptation_efficiency",
+      "destination": "artifacts/PatchTST/results/terminal_insertion_adaptation_efficiency"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_byol",
+      "destination": "artifacts/PatchTST/results/terminal_insertion_byol"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_supervised",
+      "destination": "artifacts/PatchTST/results/terminal_insertion_supervised"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terrain_contrastive",
+      "destination": "artifacts/PatchTST/results/terrain_contrastive"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terrain_place_flat_30deg_2cm_eval08142026",
+      "destination": "artifacts/PatchTST/results/terrain_place_flat_30deg_2cm_eval08142026"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/terrain_place_surface_eval08142026",
+      "destination": "artifacts/PatchTST/results/terrain_place_surface_eval08142026"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/tokenfusion_byol",
+      "destination": "artifacts/PatchTST/results/tokenfusion_byol"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/tokenfusion_supervised_ssl",
+      "destination": "artifacts/PatchTST/results/tokenfusion_supervised_ssl"
+    },
+    {
+      "source": "/path/to/local/PatchTST/results/wobble_place_support_eval08142026",
+      "destination": "artifacts/PatchTST/results/wobble_place_support_eval08142026"
+    },
+    {
+      "source": "/path/to/local/PatchTST/saved_models/paper_classification_multiseed",
+      "destination": "artifacts/PatchTST/saved_models/paper_classification_multiseed"
+    },
+    {
+      "source": "/path/to/local/PatchTST/saved_models/paper_supervised_baselines",
+      "destination": "artifacts/PatchTST/saved_models/paper_supervised_baselines"
+    },
+    {
+      "source": "/path/to/local/PatchTST/saved_models/terrain_contrastive",
+      "destination": "artifacts/PatchTST/saved_models/terrain_contrastive"
+    },
+    {
+      "source": "/path/to/local/PatchTST/saved_models/tokenfusion_ssl",
+      "destination": "artifacts/PatchTST/saved_models/tokenfusion_ssl"
+    },
+    {
+      "source": "/path/to/local/PatchTST/saved_models/tokenfusion_supervised",
+      "destination": "artifacts/PatchTST/saved_models/tokenfusion_supervised"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/paper3seed",
+      "destination": "artifacts/PatchTST/data/paper3seed"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/terrain0814",
+      "destination": "artifacts/PatchTST/data/terrain0814"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/wobbleplacesupport",
+      "destination": "artifacts/PatchTST/data/wobbleplacesupport"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/terrainplace",
+      "destination": "artifacts/PatchTST/data/terrainplace"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/terrainplacespecific",
+      "destination": "artifacts/PatchTST/data/terrainplacespecific"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/eval0814",
+      "destination": "artifacts/PatchTST/data/eval0814"
+    },
+    {
+      "source": "/path/to/local/PatchTST/data/eval08142026",
+      "destination": "artifacts/PatchTST/data/eval08142026"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/patchtst_retake",
+      "destination": "artifacts/ur3_robotiq_ros2/data/patchtst_retake"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_wobble",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_wobble"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_cnn",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_cnn"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_wobble_fz_baseline_long_horizon",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_wobble_fz_baseline_long_horizon"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/keyboard_pick_and_place",
+      "destination": "artifacts/ur3_robotiq_ros2/data/keyboard_pick_and_place"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_cylinder_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_cylinder_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_retest",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_retest"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/patchtst_for_slide",
+      "destination": "artifacts/ur3_robotiq_ros2/data/patchtst_for_slide"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/keyboard_placing",
+      "destination": "artifacts/ur3_robotiq_ros2/data/keyboard_placing"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_mlp_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_mlp_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_cylinder",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_cylinder"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_video_wobble",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_video_wobble"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_cylinder_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_cylinder_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_baseball_fz_baseline_long_horizon",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_baseball_fz_baseline_long_horizon"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/insertion_binary",
+      "destination": "artifacts/ur3_robotiq_ros2/data/insertion_binary"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_baseball_test_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_baseball_test_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_wobble_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_wobble_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_surface_selection",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_surface_selection"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_wobble_baseline_video",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_wobble_baseline_video"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_baseball",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_baseball"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_baseball_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_baseball_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_baseball_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_baseball_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/ftvla_for_slide",
+      "destination": "artifacts/ur3_robotiq_ros2/data/ftvla_for_slide"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_cnn_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_cnn_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_add_wobble",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_add_wobble"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/keyboard_descent",
+      "destination": "artifacts/ur3_robotiq_ros2/data/keyboard_descent"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/data/place_rectangle_wobble_norm_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/data/place_rectangle_wobble_norm_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/pick_place_normalization",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/pick_place_normalization"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/fixed_support_model_vs_fz_baseline",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/fixed_support_model_vs_fz_baseline"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/wobble_place_demo_videos",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/wobble_place_demo_videos"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/rectangle_place_synchronized",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/rectangle_place_synchronized"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/insertion_paper_images",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/insertion_paper_images"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/cnn_place_input_audit_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/cnn_place_input_audit_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/pick_place_normalization_remount_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/pick_place_normalization_remount_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/cnn_remount_normalization_replay_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/cnn_remount_normalization_replay_20260910"
+    },
+    {
+      "source": "/path/to/local/ur3_robotiq_ros2/artifacts/cnn_mlp_remount_evaluation_20260910",
+      "destination": "artifacts/ur3_robotiq_ros2/artifacts/cnn_mlp_remount_evaluation_20260910"
+    },
+    {
+      "source": "/path/to/local/Genesis/paper_review_20260916",
+      "destination": "artifacts/Genesis/paper_review_20260916"
+    },
+    {
+      "source": "/path/to/local/Genesis/fig",
+      "destination": "artifacts/Genesis/fig"
+    },
+    {
+      "source": "/path/to/local/Genesis/video/paper_demo_20260919",
+      "destination": "artifacts/Genesis/video/paper_demo_20260919"
+    },
+    {
+      "source": "/path/to/local/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2",
+      "destination": "artifacts/huggingface/hub/models--sentence-transformers--all-mpnet-base-v2"
+    },
+    {
+      "source": "/path/to/local/robot/pick_place_normalization.json",
+      "destination": "artifacts/robot/pick_place_normalization.json"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Python is pinned separately in simulation-python.txt. Genesis itself is the
+# materialized public pin plus the local research overlay.
+-e ./workspace/Genesis
+
+# Exact versions observed in the research simulation environment.
+imageio==2.37.0
+matplotlib==3.10.5
+numpy==2.2.6
+openai==1.91.0
+opencv-python==4.12.0.88
+pandas==2.3.2
+pillow==11.3.0
+pytest==8.4.1
+scikit-learn==1.7.1
+scipy==1.16.1
+sentence-transformers==5.1.0
+torch==2.9.1
+tqdm==4.67.1
+trimesh==5.0.0

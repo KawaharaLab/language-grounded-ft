@@ -1,0 +1,81 @@
+{
+  "component": "patchtst",
+  "upstream": {
+    "url": "https://github.com/yuqinie98/PatchTST.git",
+    "commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+    "license": "Apache-2.0"
+  },
+  "local_source": {
+    "read_only_origin": "/home/user/PatchTST",
+    "head": "d745c289295fd1365dd211eea553c8ec3f75923f",
+    "overlay": "research/patchtst"
+  },
+  "artifact_root": "workspace/artifacts/PatchTST",
+  "symlink_policy": "Use declared external artifact mounts; no data/model copies in Git",
+  "artifacts": [
+    {
+      "rq": "RQ1",
+      "source": "/path/to/local/PatchTST/results/paper_classification_multiseed/paper_classification_3seed_20260909",
+      "destination": "workspace/artifacts/PatchTST/results/paper_classification_multiseed/paper_classification_3seed_20260909",
+      "bytes": 31280130
+    },
+    {
+      "rq": "RQ1",
+      "source": "/path/to/local/PatchTST/results/tokenfusion_byol/tokenfusion_byol_20260912_194926",
+      "destination": "workspace/artifacts/PatchTST/results/tokenfusion_byol/tokenfusion_byol_20260912_194926",
+      "bytes": 162012547
+    },
+    {
+      "rq": "RQ1",
+      "source": "/path/to/local/PatchTST/saved_models/paper_classification_multiseed/paper_classification_3seed_20260909",
+      "destination": "workspace/artifacts/PatchTST/saved_models/paper_classification_multiseed/paper_classification_3seed_20260909",
+      "bytes": 388519072
+    },
+    {
+      "rq": "RQ1/RQ3",
+      "source": "/path/to/local/PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352",
+      "destination": "workspace/artifacts/PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352",
+      "bytes": 161045874
+    },
+    {
+      "rq": "RQ3",
+      "source": "/path/to/local/PatchTST/results/terminal_insertion/terminal_insertion_enter_minus_030s_20260827/dataset",
+      "destination": "workspace/artifacts/PatchTST/results/terminal_insertion/terminal_insertion_enter_minus_030s_20260827/dataset",
+      "bytes": 3575759
+    },
+    {
+      "rq": "RQ3",
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_adaptation_efficiency/terminal_insertion_adaptation_efficiency_enter_minus030s_20260827_150802",
+      "destination": "workspace/artifacts/PatchTST/results/terminal_insertion_adaptation_efficiency/terminal_insertion_adaptation_efficiency_enter_minus030s_20260827_150802",
+      "bytes": 1970182470
+    },
+    {
+      "rq": "RQ3",
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_byol/terminal_insertion_byol_20260913_103313",
+      "destination": "workspace/artifacts/PatchTST/results/terminal_insertion_byol/terminal_insertion_byol_20260913_103313",
+      "bytes": 204058916
+    },
+    {
+      "rq": "RQ3",
+      "source": "/path/to/local/PatchTST/results/terminal_insertion_supervised/terminal_insertion_supervised_20260913_172852",
+      "destination": "workspace/artifacts/PatchTST/results/terminal_insertion_supervised/terminal_insertion_supervised_20260913_172852",
+      "bytes": 206917668
+    }
+  ],
+  "data_dependencies": [
+    {
+      "source": "/mnt/nvme1/user/data/Genesis/train_08142026",
+      "destination": "workspace/Genesis/data/train_08142026",
+      "bytes": 182327356290
+    },
+    {
+      "source": "/mnt/nvme1/user/data/Genesis/eval_08142026",
+      "destination": "workspace/Genesis/data/eval_08142026",
+      "bytes": 13663026316
+    }
+  ],
+  "validation": [
+    "python3 -m unittest tests.test_learning_patchtst",
+    "python3 -m compileall -q workspace/PatchTST/PatchTST_self_supervised workspace/PatchTST/scripts"
+  ]
+}

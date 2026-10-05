@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Genesis",
+    "original_location": "/home/user/Genesis",
+    "head": "e8f52067b4773935677a5742a2873096ec3df135"
+  },
+  {
+    "name": "PatchTST",
+    "original_location": "/home/user/PatchTST",
+    "head": "d745c289295fd1365dd211eea553c8ec3f75923f"
+  },
+  {
+    "name": "ur3_robotiq_ros2",
+    "original_location": "/home/user/ur3_robotiq_ros2",
+    "head": "bdf04375035159f6616df2ab8c4ca0744b49250d"
+  }
+]

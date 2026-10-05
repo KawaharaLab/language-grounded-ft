@@ -1,0 +1,111 @@
+data_capture_manager:
+  ros__parameters:
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 60.0
+    rosbag_sigterm_timeout_sec: 10.0
+    rosbag_sigkill_on_timeout: false
+
+    # Wobbling-support profile. Relative to the fixed-floor home pose, this
+    # solution keeps tool X/Y and orientation unchanged and raises Z by 30 mm.
+    home_joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    home_positions_rad:
+      - 0.7716773748397827
+      - -1.584988419940571
+      - 1.603399812373506
+      - -1.608940007738151
+      - -1.5834692160235804
+      - -0.01414662996401006
+
+    joint_state_topic: /joint_states
+    robot_program_running_topic: /io_and_status_controller/robot_program_running
+    joint_command_topic: /servo_node/delta_joint_cmds
+    twist_command_topic: /servo_node/delta_twist_cmds
+    servo_start_service: /servo_node/start_servo
+    command_frame: base_link
+    startup_timeout_sec: 30.0
+    home_timeout_sec: 30.0
+    home_deadband: 0.02
+    home_settle_duration_sec: 0.1
+    home_velocity_tolerance_rad_sec: 0.02
+    home_min_joint_speed: 0.02
+    home_max_joint_speed: 1.0
+    home_velocity_gain: 1.5
+
+    gripper_action_name: /robotiq_2f_gripper_action
+    gripper_goal_log_topic: /robotiq_2f_gripper_action_goal
+    gripper_open_position: 0.140
+    gripper_close_position: 0.002
+    gripper_target_speed: 0.1
+    gripper_target_force: 0.1
+    gripper_result_timeout_sec: 25.0
+
+    # Keep the fixed-floor motion and decision protocol for a controlled
+    # support-condition comparison; only the initial height changes.
+    control_period_sec: 0.01
+    lower_twist_command_z: -0.5
+    return_twist_command_z: 1.0
+    post_grasp_hold_sec: 1.0
+    pick_lift_duration_sec: 4.0
+    post_lift_hold_sec: 0.8
+    enter_extra_lower_sec: 0.5
+    enter_event_alias: floor_contact
+    success_reason: model_place_detected_after_floor_contact
+    max_lower_duration_sec: 9.0
+    post_start_recording_delay_sec: 4.0
+
+    left_ft_topic: /force_torque/left
+    right_ft_topic: /force_torque/right
+    camera_wrist_topic: /camera_wrist/realsense2_camera/color/image_raw
+    camera_fixed_topic: /camera_fixed/realsense2_camera/color/image_raw
+    require_force_sensors: true
+    require_cameras: true
+    key_event_topic: /data_capture/key_events
+    event_force_wait_sec: 0.03
+
+    relay_servo_commands: true
+    servo_output_topic: /forward_position_controller/commands_teleop
+    robot_command_topic: /forward_position_controller/commands
+
+    # Architecture-specific checkpoints. model_encoder_arch selects one; their
+    # simulation statistics are replaced by the real firm_simple stats below.
+    model_checkpoint_path: PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42_best.pth
+    model_cnn_checkpoint_path: PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_cnn_seed42/terrain_floor_wobble_uniform_descent_slip5mms_cnn_seed42_best.pth
+    model_mlp_checkpoint_path: PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_mlp_seed42/terrain_floor_wobble_uniform_descent_slip5mms_mlp_seed42_best.pth
+    # Current remount calibration; its normalization_id tags all output folders.
+    model_normalization_path: artifacts/robot/pick_place_normalization.json
+    patchtst_code_path: PatchTST/PatchTST_self_supervised
+    hold_prototype_path: PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/1.pt
+    place_prototype_path: PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/3.pt
+    model_device: auto
+    model_score_topic: /data_capture/model_place_scores
+    model_stride_samples: 5
+    model_required_consecutive: 3
+    model_min_margin: 0.0
+    model_release_min_descent_sec: 2.0
+    model_max_wait_after_contact_sec: 0.8
+    enter_reaction_compensation_sec: 0.3
+    force_pair_max_skew_ms: 15.0
+    # Align each episode's open-gripper force baseline to the empty-force
+    # reference stored alongside the real normalization statistics.
+    model_empty_offset_correction_enabled: true
+    model_empty_offset_window_sec: 1.0
+    model_empty_offset_min_samples: 50
+    model_coordinate_sign:
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0

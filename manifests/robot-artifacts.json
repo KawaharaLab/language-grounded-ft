@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {"destination":"workspace/PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42_best.pth","sha256":"d7df6ac2058afa0f11cea37cbdb27643049cfc339afa1deaa3f6663804f9915a","bytes":4498103,"required_for":"Token-Fusion placement"},
+    {"destination":"workspace/PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_cnn_seed42/terrain_floor_wobble_uniform_descent_slip5mms_cnn_seed42_best.pth","sha256":"37b5618a4ff80dc315c1608153c10326dd5f996c67b6c2734ddb8092caf1a94f","bytes":4460244,"required_for":"CNN placement ablation"},
+    {"destination":"workspace/PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_mlp_seed42/terrain_floor_wobble_uniform_descent_slip5mms_mlp_seed42_best.pth","sha256":"8151bf6197a118bfaabf5a596a595a51cf2ef6ada9ef775f8b3afbcf52d74a13","bytes":4454910,"required_for":"MLP placement ablation"},
+    {"source":"/home/user/ur3_robotiq_ros2/artifacts/pick_place_normalization_remount_20260910/pick_place_normalization.json","destination":"artifacts/robot/pick_place_normalization.json","sha256":"a1abf26900e7041244c635105ca791342b0a24b2df734a1afde3668ce2a368f9","bytes":5150,"required_for":"all learned placement"},
+    {"destination":"workspace/PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/1.pt","sha256":"64f2be9ef25c6f4b5c744f8b15be760ed45b18cdf953852ef959dc737a288252","bytes":19775,"required_for":"hold prototype"},
+    {"destination":"workspace/PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/3.pt","sha256":"63f34c69936e014c56d9ddf3be2fdee9b7d1a01cdd28faea10278eddcaea92d9","bytes":19775,"required_for":"place prototype"},
+    {"destination":"workspace/PatchTST/results/wobble_place_support_eval08142026/prepared/bert_emb/support_condition/0.pt","sha256":"4673a4d6cb246fa551b91022246f61362314d9619ff9cb9c325059b373148570","bytes":7487,"required_for":"fixed support selection"},
+    {"destination":"workspace/PatchTST/results/wobble_place_support_eval08142026/prepared/bert_emb/support_condition/1.pt","sha256":"7043185b120df6a9fd9df2cb927006b17a19b6184873cb736b129688fe3d9423","bytes":7487,"required_for":"wobbling support selection"}
+  ]
+}

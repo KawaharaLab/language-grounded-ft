@@ -1,0 +1,159 @@
+data_capture_manager:
+  ros__parameters:
+    convert_after_record: false
+    rosbag_sigint_timeout_sec: 60.0
+    rosbag_sigterm_timeout_sec: 10.0
+    rosbag_sigkill_on_timeout: false
+
+    # Existing fixed-support pickup pose. After the normal pick lift, this
+    # application adds 30 mm in Cartesian Z to match the wobble descent start.
+    home_joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    home_positions_rad:
+      - 0.7716773748397827
+      - -1.5739739576922815
+      - 1.733853816986084
+      - -1.7504084745990198
+      - -1.5834692160235804
+      - -0.01414662996401006
+
+    joint_state_topic: /joint_states
+    robot_program_running_topic: /io_and_status_controller/robot_program_running
+    joint_command_topic: /servo_node/delta_joint_cmds
+    twist_command_topic: /servo_node/delta_twist_cmds
+    servo_start_service: /servo_node/start_servo
+    command_frame: base_link
+    startup_timeout_sec: 30.0
+    # Surface selection re-measures the actual TCP home pose every episode,
+    # so returning does not need the stricter insertion-task tolerance.
+    home_timeout_sec: 60.0
+    home_deadband: 0.04
+    home_settle_duration_sec: 0.1
+    home_velocity_tolerance_rad_sec: 0.04
+    home_min_joint_speed: 0.02
+    home_max_joint_speed: 1.0
+    home_velocity_gain: 1.5
+
+    gripper_action_name: /robotiq_2f_gripper_action
+    gripper_goal_log_topic: /robotiq_2f_gripper_action_goal
+    gripper_open_position: 0.140
+    gripper_close_position: 0.002
+    gripper_target_speed: 0.1
+    gripper_target_force: 0.1
+    gripper_result_timeout_sec: 25.0
+
+    control_period_sec: 0.01
+    lower_twist_command_z: -0.5
+    return_twist_command_z: 1.0
+    post_grasp_hold_sec: 1.0
+    pick_lift_duration_sec: 4.0
+    post_lift_hold_sec: 0.8
+    enter_extra_lower_sec: 0.5
+    enter_event_alias: floor_contact
+    success_reason: selected_and_released_on_fixed_surface
+    max_lower_duration_sec: 9.0
+    post_start_recording_delay_sec: 4.0
+
+    left_ft_topic: /force_torque/left
+    right_ft_topic: /force_torque/right
+    camera_wrist_topic: /camera_wrist/realsense2_camera/color/image_raw
+    camera_fixed_topic: /camera_fixed/realsense2_camera/color/image_raw
+    require_force_sensors: true
+    require_cameras: true
+    key_event_topic: /data_capture/key_events
+    event_force_wait_sec: 0.03
+
+    relay_servo_commands: true
+    servo_output_topic: /forward_position_controller/commands_teleop
+    robot_command_topic: /forward_position_controller/commands
+    # This launch owns the complete Servo path. Refuse to move if an old
+    # teleop Servo or command mux is still publishing to the same topics.
+    enforce_exclusive_control_graph: true
+    # Allow DDS graph discovery to settle before the first check, then keep
+    # watching so a controller started later cannot take over mid-motion.
+    control_graph_discovery_wait_sec: 2.0
+    control_graph_check_period_sec: 0.5
+
+    model_checkpoint_path: PatchTST/saved_models/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42/terrain_floor_wobble_uniform_descent_slip5mms_tokenfusion_seed42_best.pth
+    # Current remount calibration; its normalization_id tags all output folders.
+    model_normalization_path: artifacts/robot/pick_place_normalization.json
+    patchtst_code_path: PatchTST/PatchTST_self_supervised
+    hold_prototype_path: PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/1.pt
+    place_prototype_path: PatchTST/results/terrain_contrastive/terrain_floor_wobble_uniform_descent_contact_clean_slip5mms_20260824_132352/prepared_eval_templates_release_merged/bert_emb/action/3.pt
+    fixed_surface_prototype_path: PatchTST/results/wobble_place_support_eval08142026/prepared/bert_emb/support_condition/0.pt
+    wobbling_surface_prototype_path: PatchTST/results/wobble_place_support_eval08142026/prepared/bert_emb/support_condition/1.pt
+    model_device: auto
+    model_score_topic: /data_capture/model_place_scores
+    model_stride_samples: 5
+    model_required_consecutive: 3
+    model_min_margin: 0.0
+    model_release_min_descent_sec: 2.0
+    model_max_wait_after_contact_sec: 0.8
+    enter_reaction_compensation_sec: 0.3
+    force_pair_max_skew_ms: 15.0
+    model_empty_offset_correction_enabled: true
+    model_empty_offset_window_sec: 1.0
+    model_empty_offset_min_samples: 50
+    model_coordinate_sign:
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+      - -1.0
+      - -1.0
+      - 1.0
+
+    # Absolute TCP X/Y targets measured in the UR controller's `base` frame
+    # on 2026-08-29. The measured Z/orientation are deliberately not used:
+    # both descents share the previous wobble profile's start height.
+    # fixed reference pose: z=0.3281279032,
+    #   q=(-0.3746173194,-0.9268883630,-0.0066913934,0.0222497572)
+    # wobble reference pose: z=0.3171324864,
+    #   q=(-0.3798798805,-0.9248037322,-0.0023948959,0.0205814923)
+    fixed_surface_target_x_m: -0.3718813400688677
+    fixed_surface_target_y_m: -0.19589684937240429
+    wobble_surface_target_x_m: -0.15115650678458373
+    wobble_surface_target_y_m: -0.4116110457184974
+    minimum_surface_separation_m: 0.02
+
+    # The TCP broadcaster reports `base`, while Servo commands use base_link.
+    # Those frames differ by 180 degrees around Z, hence the X/Y signs below.
+    # The first real trial measured only ~3.1 mm/s at command 0.25. Use a
+    # full-scale bounded command, a 90 s hard timeout, and a separate stall
+    # detector so a genuinely stuck arm still stops promptly. Gain 20 keeps
+    # the maximum command until the final 50 mm instead of slowing at 200 mm.
+    horizontal_twist_command: 1.0
+    horizontal_min_twist_command: 0.15
+    horizontal_position_gain: 20.0
+    horizontal_position_tolerance_m: 0.002
+    maximum_horizontal_move_sec: 90.0
+    horizontal_stall_timeout_sec: 8.0
+    horizontal_min_progress_m: 0.002
+    horizontal_status_period_sec: 5.0
+    tcp_pose_topic: /tcp_pose_broadcaster/pose
+    tcp_pose_timeout_sec: 0.25
+    expected_tcp_pose_frame: base
+    tcp_pose_xy_to_command_sign: [-1.0, -1.0]
+    surface_move_settle_sec: 0.5
+    # Failed trial 000001 measured the normal fixed-profile four-second lift
+    # as 45.7 mm. Add the wobble profile's 30 mm directly and perform one
+    # continuous closed-loop lift, rather than stop and restart midway.
+    probe_descent_start_height_above_home_m: 0.0757
+    probe_vertical_twist_command: 1.0
+    vertical_position_tolerance_m: 0.002
+    maximum_vertical_move_sec: 10.0
+    probe_enter_grace_sec: 0.7
+    # Smooth starts, speed changes, and direction corrections. Emergency and
+    # model-detection stops bypass these limits and publish zero immediately.
+    cartesian_xy_command_slew_per_sec: 3.0
+    cartesian_z_command_slew_per_sec: 2.0
